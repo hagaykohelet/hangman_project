@@ -24,5 +24,4 @@ def apply_guess(state:dict, ch:str) -> bool:
     else:
         return True
 
-
-
+def

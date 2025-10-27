@@ -5,7 +5,7 @@ def prompt_guess() -> str:
     return char
 
 def print_status(state: dict) -> None:
-    sum = state["max_tries"] - state["wrong_guesses"]
+
     print(f"current word: {state["display"]}")
     print(f"The number of letters guessed: {state["guessed"]}")
     print(f"Amount of guesses left: {state["max_tries"] - state["wrong_guesses"]}")

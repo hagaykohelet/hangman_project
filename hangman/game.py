@@ -23,9 +23,9 @@ def validate_guesses(ch:str, guessed: set[str]) -> tuple[bool, str]:
 
 def apply_guess(state:dict, ch:str) -> bool:
     if ch in state["secret"]:
-        return False
-    else:
         return True
+    else:
+        return False
 
 
 def is_won(state: dict) -> bool:

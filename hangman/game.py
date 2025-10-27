@@ -1,3 +1,5 @@
+
+
 from words import choose_secret_word
 
 def init_state(secret: str, max_tries: int) -> dict:
@@ -18,10 +20,27 @@ def validate_guesses(ch:str, guessed: set[str]) -> tuple[bool, str]:
     else:
         raise "you need enter only one word"
 
+
 def apply_guess(state:dict, ch:str) -> bool:
     if ch in state["secret"]:
         return False
     else:
         return True
 
-def
+
+def is_won(state: dict) -> bool:
+    if "_" not in state["display"]:
+        return True
+
+
+
+def is_lost(state: dict) -> bool:
+    if state["wrong_guesses"] >= state["max_tries"]:
+        return True
+
+def render_display(state: dict) -> str:
+    return " ".join(state["display"])
+
+
+def render_summary(state: dict) -> str:
+    return state["secret"], state["guessed"]

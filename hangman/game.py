@@ -8,6 +8,7 @@ def init_state(secret: str, max_tries: int) -> dict:
 
 
 def validate_guesses(ch:str, guessed: set[str]) -> tuple[bool, str]:
+
     if len(ch) == 1:
         if ch in guessed:
             return False, f"{ch} alraedy exist"
@@ -20,10 +21,11 @@ def validate_guesses(ch:str, guessed: set[str]) -> tuple[bool, str]:
 
 
 def apply_guess(state:dict, ch:str) -> bool:
+    state["wrong_guesses"] += 1
     if ch in state["secret"]:
         return True
     else:
-        state["wrong_guesses"] += 1
+
         return False
 
 

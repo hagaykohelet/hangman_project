@@ -16,12 +16,13 @@ def play(words: list[str], max_tries: int=6):
                     if v == char:
                         state_game["display"][k]=v
         else:
-            new_set = ()
-            new_set.add(char)
             state_game["guessed"] = test[1]
             print(state_game)
             render_summary(state_game)
 
+        if is_won(state_game):
+            print("You found the word")
+            print(f"the word is {state_game["secret"]}")
 
 
 
